@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="components-demo">
+        <button-counter></button-counter>
+        <blog-post title="This is the title you can set by fill in title attribute"></blog-post>
+
+    </div>
+    <div id="blog-post-demo">
+        <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+        <br>
+        <blog-post v-bind:likes="42"></blog-post>
+        <br>
+        <br>
+        <base-checkbox v-model="lovingVue"></base-checkbox>
+        <h3> {{ message | capitalize }}</h3>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
